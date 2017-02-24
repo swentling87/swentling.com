@@ -1,0 +1,24 @@
+<div class='container'>
+  <section class='row'>
+    <div class='col-md-1'></div>
+    <div class='col-md-10 center'>
+      <%= render partial: "welcome/showcase" %>
+    </div>
+    <div class='col-md-1'></div>
+  </section>
+  <hr />
+  <section class='row'>
+    <div class='col-md-1'></div>
+    <div class='col-md-10 center'>
+      <%= render partial: "posts/post_showcase" %>
+    </div>
+    <div class='col-md-1'></div>
+  </section>
+</div>
+<section class='row'>
+  <nav aria-label="posts">
+    <div class="apple_pagination">
+      <%= will_paginate @posts, :container => false %>
+    </div>
+  </nav>
+</section>

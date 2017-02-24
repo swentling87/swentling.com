@@ -1,0 +1,31 @@
+<section class="headerBar">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-xs-6">
+        <%= image_tag("http:\/\/0.gravatar.com\/avatar\/95add28d8792fa4af0f190344db456ac", class: "pull-left image-responsive img-circle face") %>
+        <h1 class="bannerMessage hidden-sm hidden-xs"><%= link_to('swentling.com', root_path) %></h1>
+        <h2 class="bannerMessage hidden-lg hidden-md"><%= link_to('swentling.com', root_path) %></h2>
+        <small><%= link_to('Projects', projects_path, class: "header-link") %></small>
+        <small><%= link_to('About Me', welcome_about_path, class: "header-link") %></small>
+      </div>
+      <div class="pull-right">
+        <nav class="col-md-3 col-xs-6">
+          <ul class="navigator">
+            <li class="linkable">
+              <%= link_to("", "https://github.com/swentling87", class: "fa fa-github") %>
+            </li>
+            <li class="linkable">
+              <%= link_to("", "https://www.linkedin.com/in/stephen-wentling-b3900329?trk=hp-identity-photo", class: "fa fa-linkedin-square") %>
+            </li>
+            <li class="linkable">
+              <%= link_to("", "http://stackoverflow.com/users/5992270/stephen-w", class: "fa fa-stack-overflow") %>
+            </li>
+            <li class="linkable">
+              <%= mail_to("stephen@swentling.com", "", class: "fa fa-envelope") %>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>

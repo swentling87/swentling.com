@@ -1,0 +1,65 @@
+.headerBar  {
+  color: white;
+  height: 130px;
+  background-color: #003B6F;
+  border-bottom: 5px solid silver;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .header-link {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.2em;
+    margin-right: 30px;
+    margin-top: 40px;
+    text-decoration: none;
+  }
+  .bannerMessage {
+    font-family: 'Permanent Marker', cursive;
+    margin-top: 40px;
+    padding-left: 0px;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+.face {
+  margin: 20px 20px 20px 20px;
+  border: 2px solid white;
+}
+.navigator {
+  list-style-type: none;
+  li {
+    font-size: 22px;
+    margin: 0px 0px 0px 0px;
+  }
+}
+
+.blogger {
+  list-style-type: none;
+}
+
+.carousel {
+  max-width: 75%;
+  max-height: 75%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.panel-heading {
+  color: #003B6F;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.panel-body {
+
+}
+.jumbotron{
+  margin-top: 40px;
+  .about_banner {
+    color: #003B6F;
+    font-family: 'Permanent Marker', cursive;
+  }
+}
