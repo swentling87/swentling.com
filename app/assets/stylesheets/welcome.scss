@@ -1,3 +1,5 @@
+/***** Header ****/
+
 .headerBar  {
   color: white;
   height: 130px;
@@ -20,10 +22,10 @@
     padding-left: 0px;
     a {
       text-decoration: none;
-      color: white;
     }
   }
 }
+
 .face {
   margin: 20px 20px 20px 20px;
   border: 2px solid white;
@@ -35,6 +37,16 @@
     margin: 0px 0px 0px 0px;
   }
 }
+
+/***** Footer ****/
+
+.footerBar {
+  height: 50px;
+  background-color: #003B6F;
+  border-top: 5px solid silver;
+}
+
+/***** Welcome ****/
 
 .blogger {
   list-style-type: none;
