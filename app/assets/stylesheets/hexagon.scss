@@ -6,8 +6,13 @@
 
 .hexHeader {
   margin-top: -200px;
-  color: black;
   z-index: 300;
+  font-family: 'Permanent Marker', cursive;
+  font-weight: bolder;
+  a {
+    color: black;
+    text-decoration: none;
+  }
 }
 
 .invisible {

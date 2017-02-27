@@ -1,14 +1,14 @@
 <section class="container projectIndex">
   <h1 class="projectHeader">My Projects</h1>
-  <div class="row">
+  <div class="row projectIndexRow">
     <div class="col-md-12 col-xs-12">
       <% @projects.each do |project| %>
         <div class="hexWrapper">
-          <div class="hexagon" style="background-image: url(<%= "#{project.img}" %>);">
+          <div class="hexagon" style="background-image: url(<%= "assets/#{project.img}" %>);">
             <div class="hexTop"></div>
             <div class="hexBottom"></div>
           </div>
-          <h1 class="hexHeader"><%= project.name %></h1>
+          <h1 class="hexHeader"><%= link_to "#{project.name.capitalize}", project_path(project.id) %></h1>
         </div>
       <% end %>
     </div>

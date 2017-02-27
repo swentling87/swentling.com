@@ -5,6 +5,7 @@ class CreateProjects < ActiveRecord::Migration[5.0]
       t.string :web
       t.string :git
       t.string :img
+      t.string :body
       t.timestamps null: false
     end
   end

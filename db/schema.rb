@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20170223163555) do
     t.string   "web"
     t.string   "git"
     t.string   "img"
+    t.string   "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
