@@ -1,28 +1,26 @@
 <div class='container'>
   <section class='row'>
-    <div class='col-md-1'></div>
-    <div class='col-md-10'>
+    <div class='col-md-12 col-xs-12'>
       <%= render partial: "welcome/showcase" %>
     </div>
-    <div class='col-md-1'></div>
   </section>
   <hr />
   <section class='row'>
-    <div class='col-md-1'></div>
-    <div class='col-md-10'>
+    <div class='col-md-1 col-xs-1'></div>
+    <div class='col-md-10 col-xs-10'>
       <%= render partial: "posts/post_showcase" %>
     </div>
-    <div class='col-md-1'></div>
+    <div class='col-md-1 col-xs-1'></div>
   </section>
 </div>
 <section class='row'>
-  <div class='col-md-1'></div>
-  <div class='col-md-10'>
+  <div class='col-md-1 col-xs-1'></div>
+  <div class='col-md-10 col-xs-10'>
     <nav aria-label="posts">
       <div class="flickr_pagination">
         <%= will_paginate @posts %>
       </div>
     </nav>
   </div>
-  <div class='col-md-1'></div>
+  <div class='col-md-1 col-xs-1'></div>
 </section>

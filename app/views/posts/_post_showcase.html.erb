@@ -1,17 +1,17 @@
-<% @posts.each do |post| %>
-  <ul class="blogger">
-    <li class="blog_post panel panel-default">
-      <div class="panel-heading">
-        <small class='pull-right'>
-          <%= time_tag(post.created_at) %>
-        </small>
-        <h2 class="panel-heading">
-          <%= post.title %>
-        </h2>
-      </div>
-      <div class="panel-body">
-        <%= render partial: "#{post.body}" %>
-      </div>
-    </li>
-  </ul>
-<% end %>
+<ul class="blogger">
+  <% @posts.each do |post| %>
+  <li class="blog_post panel panel-default">
+    <div class="panel-heading">
+      <small class='pull-right'>
+        <%= time_tag(post.created_at) %>
+      </small>
+      <h2 class="panel-heading">
+        <%= post.title %>
+      </h2>
+    </div>
+    <div class="panel-body">
+      <%= render partial: "#{post.body}" %>
+    </div>
+  </li>
+  <% end %>
+</ul>

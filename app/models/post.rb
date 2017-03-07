@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
 
   private
   def body_path
-    self.body = "post/post_folder/#{readableToU(self.title)}"
+    self.body = "posts/post_folder/#{readableToU(self.title)}"
     self.save
   end
 end
