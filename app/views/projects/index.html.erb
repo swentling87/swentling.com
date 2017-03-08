@@ -3,12 +3,10 @@
   <div class="row projectIndexRow">
     <div class="col-md-12 col-xs-12">
       <% @projects.each do |project| %>
-        <div class="hexWrapper">
-          <div class="hexagon" style="background-image: url(<%= asset_path "#{project.img}.png" %>);">
-            <div class="hexTop"></div>
-            <div class="hexBottom"></div>
+        <div class="thumbWrapper">
+          <div class="thumbnail" style="background-image: url(<%= asset_path "#{project.img}.png" %>);">
           </div>
-          <h1 class="hexHeader"><%= link_to "#{project.name.capitalize}", project_path(project.id) %></h1>
+          <h1 class="thumbHeader invisible"><%= link_to "#{project.name.capitalize}", project_path(project.id) %></h1>
         </div>
       <% end %>
     </div>

@@ -1,14 +1,12 @@
 var ready;
 
 ready = function() {
-  $(".hexWrapper").hover(function() {
-    $(".hexHeader").removeClass('invisible');
+  $(".thumbWrapper").hover(function() {
+    $(this).find(".thumbHeader").removeClass('invisible');
     $(this).addClass("select");
-    $(this).children().addClass("select");
   }, function() {
-    $(".hexHeader").addClass('invisible');
+    $(this).find(".thumbHeader").addClass('invisible');
     $(this).removeClass("select");
-    $(this).children().removeClass("select");
   }
 )};
 
