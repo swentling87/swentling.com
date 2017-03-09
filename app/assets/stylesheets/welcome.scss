@@ -53,6 +53,10 @@
   padding-left: 0px;
 }
 
+.landing [class*="col-"]{
+  min-height: 2px;
+}
+
 .carousel {
   max-width: 75%;
   max-height: 75%;
