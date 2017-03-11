@@ -1,0 +1,13 @@
+<section class="container postShow">
+  <h1 class="postHeader">
+    <%= @post.title.capitalize %>
+  </h1>
+  <div class="row postRow">
+    <div class="col-md-12 col-xs-12 postBody">
+      <small>
+        <%= time_tag(@post.created_at) %>
+      </small><br /><br />
+      <%= render partial: "#{@post.body}" %>
+    </div>
+  </div>
+</section>

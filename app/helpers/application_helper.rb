@@ -5,4 +5,8 @@ module ApplicationHelper
   def readableToU(string)
     string.downcase.gsub(/\s/, "_")
   end
+  def find_project_id_by_img(name)
+    project = Project.find_by_img(name)
+    project.id
+  end
 end

@@ -9,25 +9,13 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <%= image_tag("blocchat.png") %>
-      <div class="carousel-caption">
-        <h3>Bloc Chat</h3>
-        <p>Angular JS Chat Program</p>
-      </div>
+      <%= link_to image_tag("blocchat.png"), project_path(find_project_id_by_img("blocchat")) %>
     </div>
     <div class="item">
-      <%= image_tag("store.png") %>
-      <div class="carousel-caption">
-        <h3>The Store</h3>
-        <p>Fake Storefront</p>
-      </div>
+      <%= link_to image_tag("store.png"), project_path(find_project_id_by_img("store")) %>
     </div>
     <div class="item">
-      <%= image_tag("blocjams.png") %>
-      <div class="carousel-caption">
-        <h3>BlocJams!</h3>
-        <p>JS Music Player</p>
-      </div>
+      <%= link_to image_tag("blocjams.png"), project_path(find_project_id_by_img("blocjams")) %>
     </div>
   </div>
 

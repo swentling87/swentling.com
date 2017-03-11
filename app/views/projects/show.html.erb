@@ -1,10 +1,10 @@
-<section class="container projectShow">
+<section class="projectShow">
   <h1 class="projectHeader"><%= @project.name.capitalize %></h1>
-  <div class="row">
+  <div class="row projectRow">
     <div class="col-md-6 col-xs-12">
-      <%= image_tag("#{@project.img}.png", size: "500x400", class: "thumbnail img-responsive center-block") %>
+      <%= image_tag("#{@project.img}.png", size: "750x375", class: "thumbnail img-responsive center-block") %>
     </div>
-    <div class="col-md-6 col-xs-12">
+    <div class="col-md-6 col-xs-12 projectBody">
       <%= render partial: "#{@project.body}" %>
     </div>
   </div>

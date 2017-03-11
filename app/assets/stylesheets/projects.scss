@@ -17,11 +17,23 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  margin-bottom: 40px;
 }
 
 .projectSubHeader {
   margin-left: auto;
   margin-right: auto;
+}
+
+.projectRow  {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.projectBody {
+  font-size: 1.5em;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
 }
 
 .projectBodyHeader {
@@ -34,7 +46,7 @@
   text-align: center;
 }
 
-.projectBody {
+.projectBodyDescription {
   margin-bottom: 20px;
 }
 

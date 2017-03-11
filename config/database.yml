@@ -24,6 +24,6 @@ production:
   adapter: postgresql
   url: <%= ENV["DATABASE_URL"] %>
   username: digitaloceantesting
-  password: admin
+  password: wildcat
   host: localhost
   database: digitaloceantesting

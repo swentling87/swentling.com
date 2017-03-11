@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'welcome#landing'
   get 'welcome/about'
   resources :projects, only: [:index, :show]
+  resources :posts, only: [:show]
 end
