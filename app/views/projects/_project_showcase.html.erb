@@ -1,25 +1,19 @@
-<div id="project-showcase" class="carousel slide center-block" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <% @project.images.each_with_index do |image, index| %>
-    <li data-target="#project-showcase" data-slide-to=index class="<%= 'active' if index == 0%>"></li>
-  </ol>
-  <% end %>
+<div id="project" class="carousel slide center-block" data-ride="carousel">
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
   <% @project.images.each_with_index do |image, index| %>
     <div class="item <%= 'active' if index == 0%>">
-      <%= image_tag("#{image.file}.png") %>
+      <%= image_tag("#{image.file}.png", size: "750x375", class: "img-responsive center-block") %>
     </div>
   <% end %>
   </div>
 
   <!-- Controls -->
-  <a class="left carousel-control" href="#project-showcase" role="button" data-slide="prev">
+  <a class="left carousel-control" href="#project" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="right carousel-control" href="#project-showcase" role="button" data-slide="next">
+  <a class="right carousel-control" href="#project" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
