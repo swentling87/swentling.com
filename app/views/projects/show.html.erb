@@ -2,7 +2,11 @@
   <h1 class="projectHeader"><%= @project.name.capitalize %></h1>
   <div class="row projectRow">
     <div class="col-md-6 col-xs-12">
-      <%= image_tag("#{@project.img}.png", size: "750x375", class: "thumbnail img-responsive center-block") %>
+      <% if @project.multi_img? %>
+        <%= render partial: "project_showcase" %>
+      <% else %>
+        <%= image_tag("#{@project.main_img}.png", size: "750x375", class: "thumbnail img-responsive center-block") %>
+      <% end %>
     </div>
     <div class="col-md-6 col-xs-12 projectBody">
       <%= render partial: "#{@project.body}" %>

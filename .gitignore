@@ -21,5 +21,6 @@
 .byebug_history
 
 #System Files
+/config/database.yml
 .DS_Store
 .yml
