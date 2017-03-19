@@ -23,7 +23,7 @@ test:
 production:
   adapter: postgresql
   url: <%= ENV["DATABASE_URL"] %>
-  username: digitaloceantesting
-  password: wildcat
+  username: swentling
+  password: admin
   host: localhost
-  database: digitaloceantesting
+  database: swentling.com
