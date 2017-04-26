@@ -1,0 +1,15 @@
+<div>
+  <p>So I said that I was going to write some posts and here it goes. I recently ran across a situation working on a project where I had an existing <b>DMG</b> file that I needed to change. But... it was read only! And that's to be expected honestly. A full program itself would be expected to be read only and that's what I was dealing with here. We had a full fledged internet browser but needed quick iterations of it created with minor changes for testing purposes. What to do?!</p>
+  <p>There answer ultimately proved way easier than I would have ever expected. It turns out that you can change a read only DMG file (while leaving an original untouched) by using the hdiutil functionality on a Mac and all in 4 easy steps.</p>
+</div>
+<div>
+  <ol>
+    <li>Open the DMG file and attach it with the command: hdiutil attach -owners on /path/to/your.dmg -shadow</li>
+    <li>Make your edits, add files, remove files etc.</li>
+    <li>Eject the currently mounted disk (now edited).</li>
+    <li>Convert your shadow file to a new cloned DMG using command: hdiutil convert -format UDZO -o /path/to/new.dmg /path/to/your.dmg -shadow</li>
+  </ol>
+</div>
+<div>
+  <p>Credit for this very much goes to this blog post found <%= link_to "here", "https://myjeeva.com/best-possible-way-edit-read-only-dmg.html" %></p>
+</div>
