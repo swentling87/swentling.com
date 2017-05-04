@@ -1,0 +1,29 @@
+<div>
+  <h3 class="postHTop">Speci-what?</h3>
+  <div>
+    CSS, oh what fun! Now this is not necessarily a complex or highly sophisticated topic to cover. But CSS Specificity is definitely a useful thing to know and understand. How does it work? What is it? Well, CSS Specificity is possibly the reason why your styling is not working the way you want it to.
+    <br />
+    The idea behind specificity is that there is an underlying set of rules that are applied to CSS files so that the browser knows what to pay attention to and what to give priority. Within CSS there are four distinct categories for defining specificity, ignore the numbers for now they will be explained soon.  
+  </div>
+  <div>
+    <ul>
+      <li class="bold">Inline Styles: 1000</li>
+      <li class="bold">Id's: 100</li>
+      <li class="bold">Classes, attributes, pseudo-class: 10</li>
+      <li class="bold">Elements and pseudo-elements: 1</li>
+    </ul>
+  </div>
+  <div>
+    Now that we know what the categories are, the question becomes how are they viewed by the browser? Well there is a method for scoring these and a few rules.
+  </div>
+<div>
+  <h3>Scoring</h3>
+  <p>
+    One way to tell which style your element will have is to determine the specificity score of that element and it can be done quite simply. Now you can take a look back at the list above and the numbers will make more sense. The numbers listed above respond to the score that each category would carry and the higher the number the more priority the browser gives it therefore making the higher number override the a lower number element. For instance, an inline style such as '< li style="color: red;" >' would get a score of 1000 and this '#body .content' would get a score of 0110. Just simply work from top to bottom on the above list adding together the applicable elements to get your score!
+  </p>
+  <h3>Rules</h3>
+  <p>
+    The higher the score the more priority it gets from the browser. Easy! Except there are a few exceptions. What if two elements have the same score with conflicting styles? The style declaration lower down the page gets priority as the page is read from top to bottom. Similarly, a declaration of an ID selector with #234 would override [id=234] simply because that is the rule. It should also be noted that the universal selector * has no specificity value. And in the rare situation that something must be overridden and given top priority, adding !important at the end of style declaration before the semicolon will provide override all prior style declarations for that element.
+  </p> 
+  For more reading on this topic check out this written by <%= link_to "Mozilla Foundation", "https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity" %>
+</div>
