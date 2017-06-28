@@ -1,0 +1,31 @@
+<h3 class="postHTop">I learned a few new methods.... and now I'm feeling plucky!</h3>
+<div>
+  So what I'm going to write about may be obvious to some developers, but I had never had any experience with this method myself. I was recently working on some projects professionally and ran across a few awesome Ruby & Rails methods/techniques, so I thought I would share one today! 
+</div>
+<h3>Pluck</h3>
+<div>
+  <div>
+    Simply put, Pluck is a shortcut to select attributes without loading extraneous records. Calling pluck will just get the attribute(s) that you've requested instead of all attributes. Typically you may write something like these:
+  </div>
+  <div class="bold indented">
+    Customer.select(:id).map(&:id)
+    <br />
+    Customer.select(:id, :email).map { |c| [c.id, c.email] }
+  </div>
+  Whereas with pluck you would just write:<br />
+  <div class="bold indented">
+    Customer.pluck(:id)
+    <br />
+    Customer.pluck(:id, :email)
+    <br />
+  </div>
+  <div>
+    Please note that model method overrides are not available and when you call pluck it must take a symbol as parameter. I should note that it can be chained with other scopes if created before and commands are allowed after as such:
+    <div class="bold indented">
+      Customer.limit(5).pluck(:name)
+      <br />
+      Customer.pluck(:name).first
+    </div>
+    This is just an initial review of pluck, there are plenty of resources and more applications for this method. I encourage anyone to explore them!
+  </div>
+</div>
