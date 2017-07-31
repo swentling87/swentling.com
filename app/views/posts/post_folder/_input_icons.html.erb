@@ -1,0 +1,61 @@
+<h3 class="postHTop">Tired of boring old input boxes?!</h3>
+<div>
+  Random as always, I'm writing about an interesting topic that I came across while working on professional projects. Although mainly a backend developer I sometimes have to handle the frontend as well and in this case was developing a simple sign up and sign in form but with icons in the input box! Note that all code shown below is similiar to the approaches I used but no code has been used directly.
+</div>
+<div>
+  <h4>Option One: Background Image</h4>
+  <div class="indented">
+    <p>I found this option to be great and simple to implement but it just wouldn't work the way that I needed it to in this circustance. For this particular case I was required to use Ionic-icons and needed to set a border for the icon which wasn't something I could easily manipulate when setting a background image.
+    </p>
+    <pre>
+      <code>
+        HTML.ERB File
+        &lt;%= password_field_tag :password, placeholder: "Password", class: "password_form_field"%> 
+        
+        CSS File
+        .password_form_field {
+          background: url(images/comment-author.gif) no-repeat scroll 7px 7px;
+          padding-left:30px;
+        }
+      </code>
+    </pre>
+    <br />
+  </div>
+</div>
+<div>
+  <h4>Option Two: Wrap it in a Div</h4>
+  <p>As I mentioned before, this was the implementation that I used and was great because it allowed me the extra flexibility to build out the options that my client required. By wrapping the entire input along with the icon in a div I could include any icon, image or text as needed and make the div css match the specifications.</p>
+  <div class="indented">    
+    <pre>
+      <code>
+        HTML.ERB File
+        &lt;div class="password_form_field center-block">
+          &lt;i class="icon ion-key placeholder-icon">&lt;/i>
+          &lt;%= password_field_tag :password, placeholder: "Password", class: "input"%> 
+        &lt;/div>
+        
+        CSS File
+        .password_form_field {
+          padding: 5px 0px 5px 0px;
+          border-radius: 5px;
+          background-color: white;
+          line-height: 38px;
+          color: white;
+          text-align: left
+        }
+        .placeholder-icon {
+          border-right: 2px black solid;
+          vertical-align: middle;
+          padding-right: 12px;
+          font-size: 2em;
+          margin-left: 12px;  
+        }
+        .input {
+          color: grey;
+          width: 78%;
+        }
+      </code>
+    </pre>
+    <br />
+  </div>
+</div>
