@@ -1,0 +1,50 @@
+<h3 class="postHTop">React on Rails</h3>
+<div>
+  Up front I want to make it known that I won't be going very far in depth here regarding this topic as there truly is a vast amount to cover but I'm taking the time to write this method/approach down as much to share it but also to document it for myself. Specifically, I'm documenting how to get data from a rails controller directly to a React view. I spent some time recently working on a small project using Rails and React with Webpacker and this was a very handy approach.
+</div>
+<br />
+<div>
+  <h4>Step One</h4>
+  <div class="indented">
+    <p>A little background first, I had Rails code and essentially separate React code but in the same app and we were trying to figure out how to connect them together and get data from the backend to the frontend. Turning off Turbolinks was essential to help with links but most importantly we had to change the way the app was handling page requests as this app needed to be more than a single page. So I actually turned off the React Router we had setup and let Rails handle that with each page serving up a new instance of React. The HTML page would get served by rails and simply initialize that React instance as seen below.
+    </p>
+    <pre>
+      <code>
+        HTML.ERB File
+        &lt;%=  javascript_pack_tag 'Blog' %> 
+      </code>
+    </pre>
+    <br />
+  </div>
+</div>
+<div>
+  <h4>Step Two</h4>
+  <p>From there I still needed to get the backend data to the frontend. I had the data initialized in an instance variable by the Rails controller and available since the Rails router had directed me to that action but still couldn't get it to the React instance. That's when I found this <%= link_to "solution", "https://hackernoon.com/how-to-get-your-rails-data-into-your-react-component-with-webpacker-647dc63706c9" %> which allowed me to do just what I needed. By placing a hidden div on the HTML page served up by the rails action before the javascript I could effectively pass the data from the controller to the React part of the app as JSON and grab it directly from the DOM.</p>
+  <div class="indented">    
+    <pre>
+      <code>
+        HTML.ERB File
+        &lt%= content_tag :div,
+         id: "blog_data",
+         data: @blog.to_json do %>
+        &lt% end %>
+        &lt;%=  javascript_pack_tag 'Blog' %> 
+      </code>
+    </pre>
+    <br />
+  </div>
+</div>
+<div>
+  <h4>Step Three</h4>
+  <p>The final step was just to now handle this data properly within the React part of the app and that simply consisted of setting some constants within the JSX file and grabbing that data directly from the DOM to be used as needed.</p>
+  <div class="indented">    
+    <pre>
+      <code>
+        JSX File
+        const node = document.getElementById('blog_data')
+        const blog = JSON.parse(node.getAttribute('data'))
+      </code>
+    </pre>
+    <br />
+  </div>
+</div>
