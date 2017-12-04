@@ -1,0 +1,12 @@
+<h3 class="postHTop">Loading scripts with jQuery</h3>
+<div>
+  So this is a bit elementary of a topic but still something that isn't widely known. Learning to work with jQuery I had one method that essentially ran my code. Without a doubt I would load and run my code with <code>$(document).ready(function(){})</code> because, that's how I was taught to do it and that's how it's done! No thought to alternatives, because I never needed it. I'd set timeouts and click handlers and many different things but all with this one line, <b>always</b>. Although there were some issues where I would have to fight with Turbolinks when working on Rails projects, this just worked for me!
+</div>
+<br />
+<div>
+  <h4>Why change?</h4>
+  <div class="indented">
+    <p>The case for the change was that I wasn't working on one of my own projects, wasn't working in an environment that I had designed and for that matter one that I did not like! I was working on a project that was written 4 years prior by dev's who were very much not in the picture, zero documentation, written in an odd syntax and had only seen minor css changes in those 4 years. Built as a Backbone app running on top of Rails and views written in .ejs.jst files, this wasn't an easy application to work with. With that being said, we were now trying to do a full redesign for the main app interface but couldn't get our scripts to run properly because Backbone was trying to run the script before the page was written and our other method kept re-running the script. So we pulled it out of the Backbone part of the app and placed it into a separate file and loaded it within the view. Great! But it didn't work... because it was running the script prior to the DOM being complete since Backbone was loading/creating part of it. So we needed something to load the script after the DOM was complete and all of the assets were in place. And that's where <code>$(window).load(function(){})</code> comes into the story. Using that method will load the script but just a bit later than it does with document.ready. It loads once all frames, objects and assets are loaded effectively solving the problem for this script. 
+    </p>
+  </div>
+</div>
