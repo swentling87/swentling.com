@@ -2,15 +2,60 @@
   <h1 class="projectHeader">My Projects</h1>
   <div class="row projectIndexRow">
     <div class="col-md-12 col-xs-12">
-      <% @projects.each do |project| %>
-        <div class="thumbWrapper">
-          <%= link_to project_path(project.id) do %>
-            <div class="thumbnail" style="background-image: url(<%= asset_path "#{project.main_img}.png" %>);">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#all" aria-controls="all" role="tab" data-toggle="tab">All</a></li>
+        <li role="presentation"><a href="#professional" aria-controls="professional" role="tab" data-toggle="tab">Professional</a></li>
+        <li role="presentation"><a href="#personal" aria-controls="personal" role="tab" data-toggle="tab">Personal</a></li>
+        <li role="presentation"><a href="#educational" aria-controls="educational" role="tab" data-toggle="tab">Educational</a></li>
+      </ul>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="all">
+          <% @projects.each do |project| %>
+            <div class="thumbWrapper">
+              <%= link_to project_path(project.id) do %>
+                <div class="thumbnail" style="background-image: url(<%= asset_path "#{project.main_img}.png" %>);">
+                </div>
+                <h1 class="thumbHeader invisible"><%= link_to "#{project.name.capitalize}", project_path(project.id) %></h1>
+              <% end %>
             </div>
-            <h1 class="thumbHeader invisible"><%= link_to "#{project.name.capitalize}", project_path(project.id) %></h1>
           <% end %>
         </div>
-      <% end %>
+        <div role="tabpanel" class="tab-pane" id="professional">
+          <% @pro_projects.each do |project| %>
+            <div class="thumbWrapper">
+              <%= link_to project_path(project.id) do %>
+                <div class="thumbnail" style="background-image: url(<%= asset_path "#{project.main_img}.png" %>);">
+                </div>
+                <h1 class="thumbHeader invisible"><%= link_to "#{project.name.capitalize}", project_path(project.id) %></h1>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="personal">
+          <% @personal_projects.each do |project| %>
+            <div class="thumbWrapper">
+              <%= link_to project_path(project.id) do %>
+                <div class="thumbnail" style="background-image: url(<%= asset_path "#{project.main_img}.png" %>);">
+                </div>
+                <h1 class="thumbHeader invisible"><%= link_to "#{project.name.capitalize}", project_path(project.id) %></h1>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="educational">
+          <% @edu_projects.each do |project| %>
+            <div class="thumbWrapper">
+              <%= link_to project_path(project.id) do %>
+                <div class="thumbnail" style="background-image: url(<%= asset_path "#{project.main_img}.png" %>);">
+                </div>
+                <h1 class="thumbHeader invisible"><%= link_to "#{project.name.capitalize}", project_path(project.id) %></h1>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </section>
