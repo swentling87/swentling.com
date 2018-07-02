@@ -2,7 +2,6 @@ var ready;
 
 ready = function() {
   if(!visited) {
-    console.log(visited);
     $('#standalone').popup('show',{
       color: 'white',
       opacity: 1,

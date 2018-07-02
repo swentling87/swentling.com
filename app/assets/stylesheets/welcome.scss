@@ -2,7 +2,7 @@
 
 .headerBar  {
   color: white;
-  height: 130px;
+  min-height: 130px;
   background-color: #003B6F;
   border-bottom: 5px solid silver;
   a {
@@ -24,6 +24,17 @@
       text-decoration: none;
     }
   }
+}
+
+.icon-row {
+  padding-top: 4%;
+  padding-bottom: 10px;
+  font-size: 18px;
+}
+
+.copy_right{
+  padding-top: 10px;
+  color: white;
 }
 
 .face {
@@ -94,8 +105,12 @@
       z-index: 2;
       transition: all 200ms ease-in;
       transform: scale(1.5);
-    } 
+    }
   } 
+  .row {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
 }
 
 .jumbotron{
@@ -119,4 +134,104 @@
 }
 .popup_visible #standalone {
   transform: scale(1);
+}
+
+/***** Welcome -- Index ****/
+.pano {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.6) 100%), url("carp_bch.jpg") no-repeat fixed;
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+}
+
+#sw_index_logo {
+  width:20%;
+  height: 200px;
+  margin-left: 40%;
+  margin-top: 55px;
+}
+
+#logo_text {
+  height: 200px;
+  width:28%;
+  text-align: center;
+  margin-left: 36%;
+  padding-top: 75px;
+  margin-top: 25px;
+  color: white;
+  font-family: 'Permanent Marker', cursive;
+}
+
+#pano_down {
+  color: silver;
+  font-size: 24px;
+  margin-top: 15px;
+}
+
+#pano_down_white {
+  color: white;
+  font-size: 24px;
+  margin-top: 15px;
+}
+
+#row_2 {
+  min-height: 350px;
+  background-color: #003B6F;
+}
+
+#row_3 {
+  height: auto;
+}
+
+#row_4 {
+  min-height: 300px;
+}
+
+#row_5 {
+  min-height: 230px;
+  background-color: rgba(192,192,192,0.5);
+}
+
+.contact_header {
+  padding-top: 30px;
+  color: #003B6F;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.contact-row {
+  font-size: 48px;
+}
+
+.contact-row a {
+  margin-top: 30px;
+  color: #003B6F;
+}
+
+.contact-row a:hover {
+  text-decoration: none;
+}
+
+.welcome_header {
+  padding-top: 10px;
+  color: white;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.skill_header_index {
+  color: #003B6F;
+  font-family: 'Permanent Marker', cursive;
+  margin-bottom: 60px;
+}
+
+.recent_work_header{
+  color: #003B6F;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.no_margin {
+  margin: 0px !important;
+}
+
+.no_padding {
+  padding: 0px !important;
 }

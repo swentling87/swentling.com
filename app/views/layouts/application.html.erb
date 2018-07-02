@@ -24,6 +24,9 @@
   </head>
 
   <body>
+    <script>
+      var visited = "<%= @visited %>"
+    </script>
     <%= render partial: 'layouts/portHeader' %>
     <%= yield %>
     <%= render partial: 'layouts/portFooter' %>
