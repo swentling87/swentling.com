@@ -1,0 +1,27 @@
+<h3 class="postHTop">Fun with Sidekiq Cron!</h3>
+<div>
+  Cron jobs can be very useful but configuring a cron tab isn't the most dev-friendly experience. Beyond that, it isn't necessarily something that any dev in any environment can implement due to access restrictions. Now a side note here is that there are valid gems to do this kind of thing but in the circustance that I was operating under I didn't want to add any new libraries. So this is where Sidekiq Enterprise comes into play. We already were using Sidekiq but hadn't explored any of its features beyond the most basic implementation.
+</div>
+<br />
+<div>
+  <h4>How does it work?</h4>
+  <div class="indented">
+    It's actually pretty straight forwards, it just takes an update the the Sidekiq initializer file and creation of your worker class. Although I glossed over it earlier, it's important to note that this will only work for Sidekiq Enterprise and not the base Sidekiq implementation. In order to setup the initializer properly you'll just need to add the code listed below (taken from the docs <a href="https://github.com/mperham/sidekiq/wiki/Ent-Periodic-Jobs">here</a>) and swap our your worker class for the 2nd position in the register method.
+  </div>
+  <div class="indented">    
+    <pre>
+      <code>
+        Sidekiq.configure_server do |config|
+          config.periodic do |mgr|
+            # see any crontab reference for the first argument
+            # e.g. http://www.adminschoice.com/crontab-quick-reference
+            mgr.register('0 * * * *', SomeHourlyWorkerClass)
+            mgr.register('* * * * *', SomeWorkerClass, retry: 2, queue: 'foo')
+            mgr.register(cron_expression, worker_class, job_options={})
+          end
+        end
+      </code>
+    </pre>
+    <br />
+  </div>
+</div>
