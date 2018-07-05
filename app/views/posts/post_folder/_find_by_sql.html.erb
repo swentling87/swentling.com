@@ -1,0 +1,29 @@
+<h3 class="postHTop">Find By SQL</h3>
+<div>
+  This is a story about when I was confronted by a bloated, neglected and worn out Rails 2 application that somehow was limping along without any updates for 2 years and tasked with taking it and beginning to iterate on it. Spoiler alert, it was and is a nightmare to develop on. I truly feel for the early pioneers of Rails (let alone other any other early pioneers of web development), as this was a difficult task.
+</div>
+<br />
+<div>
+  <h4>What does this have to do with SQL?</h4>
+  <div class="indented">
+    Well, it really is less to do with SQL and more to do with ActiveRecord and the wonderous methods that it provides for accessing the database. Methods that I took for granted and was used to using but weren't available in Rails 2. Due to the fact that the application was very brittle, the idea of updating ActiveRecord or even the Rails version was out of the question. I was stuck and had to work with this system at least for now. So when I have a complicated query and don't have methods like join, includes, where or select available what should I do? And that's where find_by_sql came into play.
+  </div>
+  <h4>Find By SQL</h4>
+  <div class="indented">
+    It's not pretty, definitely not elegant but it got the job done. There may be a better way to do this, but with budgetary and time contstraints involved as this was a paid project and Rails 2 being deprecated it didn't make sense to dig into it any further when a working solution was found.
+  </div>
+  <div class="indented">
+    So how does it work? Simply put you will start with a model name such as Post and then call the command <code>.find_by_sql</code> and pass it a string of SQL. It's that easy! I've included a very basic example below but the real implementation included multiple joins, some where clauses, order by etc. but with just a simple example you can see how easy and powerful this can be. Just a side note though that this query was run directly (essentially like a scope) and did not receive any user input which could cause some security issues.
+  </div>  
+  <div class="indented">    
+    <pre>
+      <code>
+        def foo_finder
+          query = "SELECT * from foo WHERE foo.name=bar.name"
+          Foo.find_by_sql(query)
+        end
+      </code>
+    </pre>
+    <br />
+  </div>
+</div>

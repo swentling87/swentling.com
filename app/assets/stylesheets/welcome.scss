@@ -89,6 +89,7 @@
   }
   .image_icons {
     min-height: 100px;
+    margin-bottom: 20px;
     .skill_icon {
       display:inline-block;
       font-size: 60px;
@@ -189,7 +190,9 @@
 
 #row_5 {
   min-height: 230px;
-  background-color: rgba(192,192,192,0.5);
+  background: image-url("marble3.jpg");
+  background-size: cover;
+  // background-color: rgba(192,192,192,0.5);
 }
 
 .contact_header {
@@ -220,7 +223,7 @@
 .skill_header_index {
   color: #003B6F;
   font-family: 'Permanent Marker', cursive;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .recent_work_header{
