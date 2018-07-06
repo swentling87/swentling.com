@@ -1,15 +1,21 @@
 <section class="projectShow">
   <h1 class="projectHeader"><%= @project.name.capitalize %></h1>
   <div class="row projectRow">
+    <div class="col-md-6 col-xs-12 projectBody">
+      <%= render partial: "#{@project.body}" %>
+    </div>
     <div class="col-md-6 col-xs-12">
       <% if @project.multi_img? %>
-        <%= render partial: "project_showcase" %>
+        <h3 class="projectBodyHeader">Images</h3>
+        <% @project.images.each do |image| %>
+          <div class="item">
+            <%= image_tag("#{image.file}.png", size: "750x375", class: "img-responsive center-block") %>
+          </div>
+          <hr />
+        <% end %>
       <% else %>
         <%= image_tag("#{@project.main_img}.png", size: "750x375", class: "thumbnail img-responsive center-block") %>
       <% end %>
-    </div>
-    <div class="col-md-6 col-xs-12 projectBody">
-      <%= render partial: "#{@project.body}" %>
     </div>
   </div>
 </section>
